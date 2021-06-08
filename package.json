@@ -3,29 +3,56 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "@fortawesome/free-regular-svg-icons": "5.15.3",
+    "@rollup/plugin-commonjs": "19.0.0",
+    "@rollup/plugin-node-resolve": "13.0.0",
+    "@rollup/plugin-typescript": "8.2.1",
+    "@storybook/preset-scss": "^1.0.3",
+    "@tailwindcss/aspect-ratio": "0.2.1",
+    "@tailwindcss/forms": "0.3.3",
+    "@tailwindcss/typography": "0.4.1",
+    "@testing-library/jest-dom": "5.11.4",
+    "@testing-library/react": "11.1.0",
+    "@testing-library/user-event": "12.1.10",
+    "@types/jest": "26.0.15",
+    "@types/node": "12.0.0",
+    "@types/react": "17.0.0",
+    "@types/react-dom": "17.0.0",
+    "autoprefixer": "10.2.6",
+    "postcss": "8.3.0",
+    "postcss-cli": "8.3.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
     "react-scripts": "4.0.3",
-    "typescript": "^4.1.2",
-    "web-vitals": "^1.0.1"
+    "rollup-plugin-peer-deps-external": "2.2.4",
+    "rollup-plugin-postcss": "4.0.0",
+    "tailwindcss": "2.1.4",
+    "tailwindcss-children": "2.1.0",
+    "typescript": "4.1.2",
+    "web-vitals": "1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "rollup -c",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public",
+    "tailwind": "postcss src/theme/tailwind-base.scss -o src/theme/tailwind.scss"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
   "browserslist": {
@@ -39,5 +66,24 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@fortawesome/free-regular-svg-icons": "5.15.3",
+    "@storybook/addon-actions": "6.2.9",
+    "@storybook/addon-essentials": "6.2.9",
+    "@storybook/addon-links": "6.2.9",
+    "@storybook/node-logger": "6.2.9",
+    "@storybook/preset-create-react-app": "3.1.7",
+    "@storybook/react": "6.2.9",
+    "css-loader": "^5.2.6",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "sass-loader": "^12.0.0",
+    "style-loader": "^2.0.0"
+  },
+  "peerDependencies": {
+    "@fortawesome/free-regular-svg-icons": "5.15.3",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   }
 }

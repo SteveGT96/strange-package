@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import './assets/fontawesome/css/all.min.css'
+import './src/theme/tawilwind.scss';
 
 function App() {
   return (

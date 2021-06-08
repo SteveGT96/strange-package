@@ -1,0 +1,32 @@
+
+
+@mixin gtGrid($size) {
+    
+    @if $size < 7 {
+        .grid-#{$size} {
+            @apply grid grid-cols-#{$size} grid-rows-#{$size};
+        }
+        .grid-y-#{$size} {
+            @apply grid grid-rows-#{$size};
+        }
+        .y-span-#{$size} {
+            @apply row-span-#{$size};
+        }
+    }
+
+    @if $size == 7 {
+        .y-span-full {
+            @apply row-span-full;
+        }
+        .x-span-full {
+            @apply col-span-full;
+        }
+    }
+
+    .grid-x-#{$size} {
+        @apply grid grid-cols-#{$size};
+    }
+    .x-span-#{$size} {
+        @apply col-span-#{$size};
+    }
+}

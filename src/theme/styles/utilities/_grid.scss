@@ -1,0 +1,17 @@
+@import './mixins';
+
+@variants responsive {
+
+    @for $size from 1 to 13 {
+        @include gtGrid($size)
+    }
+
+}
+
+[tab] {
+    @apply bg-green-200 w-full m-1 rounded-t-md flex-1;
+}
+
+[slot="bottom"] {
+    @apply grid grid-cols-4 space-x-1
+}

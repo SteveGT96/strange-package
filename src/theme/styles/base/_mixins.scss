@@ -1,0 +1,21 @@
+
+@mixin ratios {
+    @for $value from 2 to 16 {
+        @for $val from 1 to ($value - 1) {
+            .ratio-#{$value}\/#{$val} {
+                @apply aspect-w-#{$value} aspect-h-#{$val};
+            }
+        }      
+    }
+}
+
+@mixin aspect-ratio($width, $height) {
+    .ratio-#{$width}-#{$height} {
+        position: relative;
+        padding-top: ($height / $width) * 100%;
+        @apply rounded-lg;
+        > * {
+            @apply absolute full inset-0;
+        }
+    }
+}
